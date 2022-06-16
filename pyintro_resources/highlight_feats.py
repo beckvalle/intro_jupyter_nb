@@ -22,7 +22,10 @@ def hl_feats():
                     w_img=mpimg.imread(os.path.join('img', 'Jupyter_dashboard.png'))
                     
             if select_img.value == 'Notebook':
-                w_img=mpimg.imread(os.path.join('img', 'Jupyter_notebook_head.png'))
+                if select_feat.value == 'Command palette':
+                    w_img=mpimg.imread(os.path.join('img', 'tool_bar_shortcut.png'))
+                else:
+                    w_img=mpimg.imread(os.path.join('img', 'Jupyter_notebook_head.png'))
                 
             if select_img.value == 'Notebook Cells': 
                 w_img=mpimg.imread(os.path.join('img', 'Jupyter_cells.png')) 
@@ -38,47 +41,47 @@ def hl_feats():
             rect_patch = None
              
             if select_feat.value == "'Files' tab":
-                rect_patch = plt.Rectangle((20, 60), 50, 30, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((0, 32), 40, 60, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = '<b>Feature Description</b>: This tab displays a window where you can view your files.'
             if select_feat.value == "Files list":
-                rect_patch = plt.Rectangle((20, 170), 300, 75, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((40, 170), 400, 120, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = '<b>Feature Description</b>: All of your notebooks, files, and folders are displayed here.'
             if select_feat.value == 'Select an item':
-                rect_patch = plt.Rectangle((0, 90), 350, 35, fill=None, edgecolor='r', linewidth=2)
-                feat_desc.value = '<b>Feature Description</b>: This menu shows actions you can take with an item - these actions will change depending on what you have selected (notebook, file, or folder) and if the notebook is currently running. Actions include duplicating, renaming, moving, downloading, viewing, editing, or deleting an item, or shutting down a notebook.'
+                rect_patch = plt.Rectangle((100, 140), 400, 375, fill=None, edgecolor='r', linewidth=2)
+                feat_desc.value = '<b>Feature Description</b>: After right clicking an item, you can view a menu that shows the actions you can take with it - these actions will change depending on what you have selected (notebook, file, or folder) and if the notebook is currently running. Actions include duplicating, renaming, moving, downloading, viewing, editing, or deleting an item, or shutting down a notebook.'
                 
                 
             if select_feat.value == "'New' button":    
-                rect_patch = plt.Rectangle((1080, 100), 50, 26, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((50, 40), 100, 30, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = '<b>Feature Description</b>: You can create a new notebook, text file, or folder using this button.'
             if select_feat.value == 'Notebook title':
-                rect_patch = plt.Rectangle((135, 0), 400, 35, fill=None, edgecolor='r', linewidth=2)
-                feat_desc.value = '<b>Feature Description</b>: The notebook title is displayed here. You can click to rename it.'
+                rect_patch = plt.Rectangle((360, 50), 280, 35, fill=None, edgecolor='r', linewidth=2)
+                feat_desc.value = '<b>Feature Description</b>: The notebook title is displayed here.'
             if select_feat.value == 'Save status':
-                rect_patch = plt.Rectangle((520, 0), 330, 35, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((250, 520), 110, 30, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = '<b>Feature Description</b>: This indicates when the notebook was last saved. Save often!'
             if select_feat.value == 'Menu bar':
-                rect_patch = plt.Rectangle((5, 43), 500, 35, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((40, 5), 500, 35, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = '<b>Feature Description</b>: Various actions can be taken from the menu bar. A common action is restarting the kernel.'
             if select_feat.value == 'Tool bar':
-                rect_patch = plt.Rectangle((5, 75), 540, 35, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((360, 80), 610, 35, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = '<b>Feature Description</b>: Shortcuts for common actions are located here. Save using the left-most button often!'
             if select_feat.value == 'Cell type selector':
-                rect_patch = plt.Rectangle((380, 74), 120, 35, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((710, 80), 120, 35, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = "<b>Feature Description</b>: You can use this dropdown to change the type of your selected cell(s). The two most common cell types are 'Code' and 'Markdown'."
             if select_feat.value == 'Command palette': 
-                rect_patch = plt.Rectangle((500, 74), 45, 35, fill=None, edgecolor='r', linewidth=2)
-                feat_desc.value = '<b>Feature Description</b>: Clicking here will bring up a useful list of keyboard shortcuts.'
+                rect_patch = plt.Rectangle((150, 40), 400, 35, fill=None, edgecolor='r', linewidth=2)
+                feat_desc.value = '<b>Feature Description</b>: Open View->Activate Command Palette or press Ctrl+Shift+C to open the command palette. Clicking here will bring up a useful list of keyboard shortcuts.'
 
                 
             if select_feat.value == 'Markdown cell':
-                rect_patch = plt.Rectangle((110, 24), 1000, 90, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((50, 24), 1000, 120, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = '<b>Feature Description</b>: This is a markdown cell. Use it for descriptive text and headings. Both HTML and Jupyter Markdown formatting can be used to style text.'
             if select_feat.value == 'Code cell':
-                rect_patch = plt.Rectangle((110, 120), 1000, 100, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((50, 150), 1500, 90, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = '<b>Feature Description</b>: This is a code cell. You can run script snippets here.'
             if select_feat.value == 'Cell status':
-                rect_patch = plt.Rectangle((45, 120), 70, 30, fill=None, edgecolor='r', linewidth=2)
+                rect_patch = plt.Rectangle((0, 150), 50, 30, fill=None, edgecolor='r', linewidth=2)
                 feat_desc.value = "<b>Feature Description</b>: This number tells you the order that the cells have been run in. If it is blank, the cell hasn't been run. If it has an *, the cell is currently running."
 
             if rect_patch:
